@@ -1,0 +1,28 @@
+radical = "一"
+radical_code = 1
+
+[[characters]]
+char = "一"
+codepoint = "U+4E00"
+stroke_count = 1
+readings.pinyin = ["yī"]
+readings.hanviet = ["nhất"]
+readings.onyomi = ["ichi", "itsu"]
+readings.kunyomi = ["ひと", "ひとつ"]
+readings.korean = ["일"]
+definitions.vi = ["một"]
+definitions.en = ["one"]
+sources = ["Unihan", "Wiktionary"]
+
+[[characters]]
+char = "丁"
+codepoint = "U+4E01"
+stroke_count = 2
+readings.pinyin = ["dīng"]
+readings.hanviet = ["đinh"]
+readings.onyomi = ["tei", "chou"]
+readings.kunyomi = ["ひのと"]
+readings.korean = ["정"]
+definitions.vi = ["đinh (người đinh, can Đinh)"]
+definitions.en = ["fourth of the ten Heavenly Stems", "male adult"]
+sources = ["Unihan", "Wiktionary"]
