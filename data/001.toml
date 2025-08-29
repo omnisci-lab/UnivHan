@@ -1,28 +1,23 @@
-radical = "一"
-radical_code = 1
+[[entry]]
+char = "人"
+ucode = ""
+radical = nan
+strokes = 2
+examples = [ ]
 
-[[characters]]
-char = "一"
-codepoint = "U+4E00"
-stroke_count = 1
-readings.pinyin = ["yī"]
-readings.hanviet = ["nhất"]
-readings.onyomi = ["ichi", "itsu"]
-readings.kunyomi = ["ひと", "ひとつ"]
-readings.korean = ["일"]
-definitions.vi = ["một"]
-definitions.en = ["one"]
-sources = ["Unihan", "Wiktionary"]
+  [entry.readings]
+  sinoVietnamese = [ "Nhân", "nhơn" ]
+  onyomiReadings = [ "ニン", "ジン" ]
+  hanjaReadings = [ "인" ]
 
-[[characters]]
-char = "丁"
-codepoint = "U+4E01"
-stroke_count = 2
-readings.pinyin = ["dīng"]
-readings.hanviet = ["đinh"]
-readings.onyomi = ["tei", "chou"]
-readings.kunyomi = ["ひのと"]
-readings.korean = ["정"]
-definitions.vi = ["đinh (người đinh, can Đinh)"]
-definitions.en = ["fourth of the ten Heavenly Stems", "male adult"]
-sources = ["Unihan", "Wiktionary"]
+[[entry]]
+char = "山"
+ucode = "U+5C71"
+strokes = 3
+examples = [ ]
+radicals = [ "⼭" ]
+
+  [entry.readings]
+  sinoVietnamese = [ "San", "sơn" ]
+  onyomiReadings = [ "サン" ]
+  hanjaReadings = [ "산" ]
