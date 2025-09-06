@@ -26,9 +26,7 @@ ipcMain.handle("entry.save", async (_e, entry) => {
     return true;
 });
 
-ipcMain.handle("entry.search", async (_e, keyword) => {
-    console.log("Searching...", keyword);
-
-    searchEntries(dataDir, keyword);
-    return true;
+ipcMain.handle('list.load', async (_e, keyword) => {
+    const entries = searchEntries(dataDir, keyword);
+    return entries;
 });

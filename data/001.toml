@@ -1,14 +1,15 @@
 [[entry]]
-char = "人"
+char = "科"
 ucode = ""
 radical = nan
-strokes = 2
+strokes = 0
 examples = [ ]
+radicals = [ "" ]
 
   [entry.readings]
-  sinoVietnamese = [ "Nhân", "nhơn" ]
-  onyomiReadings = [ "ニン", "ジン" ]
-  hanjaReadings = [ "인" ]
+  sinoVietnamese = [ "" ]
+  onyomiReadings = [ "" ]
+  hanjaReadings = [ ]
 
 [[entry]]
 char = "山"

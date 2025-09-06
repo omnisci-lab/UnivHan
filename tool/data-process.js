@@ -79,7 +79,7 @@ function saveOrUpdateEntry(dataDir, entryObj) {
     saveFile(lastFilePath, data);
 }
 
-function searchEntries(dataDir, char) {
+function searchEntries(dataDir, char = '') {
     const files = listTomlFiles(dataDir);
     const results = [];
 

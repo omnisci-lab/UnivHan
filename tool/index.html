@@ -14,61 +14,100 @@
         <div class="row">
             <div class="col">
                 <button id="btnExportJson" class="btn btn-primary">Export Json</button>
+                <button id="btnEditor" class="btn btn-warning" data-bs-toggle="modal"
+                    data-bs-target="#editorModal">Editor</button>
             </div>
             <div class="col text-end">
                 <input id="searchInput" class="form-control" placeholder="Search by char, ucode, radical, reading...">
             </div>
         </div>
 
-        <div class="card mt-2">
-            <div class="card-body">
-                <div class="row my-3">
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Char</label>
-                        <input id="charInput" class="form-control" required placeholder="人">
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>UCode</label>
-                        <input id="ucodeInput" class="form-control" placeholder="U+4E00">
-                    </div>
+        <div class="row mt-2">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Character</th>
+                                <th>Uincode</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="character-list">
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        </div>
 
-                <div class="row my-3">
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Radicals (split ,)</label>
-                        <input id="radicalInput" type="text" class="form-control" required placeholder="一, 丨, 丶">
+        <!-- Modal -->
+        <div class="modal fade" id="editorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Strokes</label>
-                        <input id="strokesInput" type="number" class="form-control" min="1" required placeholder="1">
-                    </div>
-                </div>
-                <div class="row my-3">
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Readings (SinoVietnamese)</label>
-                        <input id="sinoVietnameseInput" class="form-control" placeholder="Nhân, nhơn">
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Readings (On'yomi)</label>
-                        <input id="onyomiReadingInput" class="form-control" placeholder="ジン, ニン">
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                        <label>Readings (Hanja)</label>
-                        <input id="hanjaReadingInput" class="form-control" placeholder="">
-                    </div>
-                </div>
+                    <div class="modal-body">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <div class="row my-3">
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Char</label>
+                                        <input id="charInput" class="form-control" required placeholder="人">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>UCode</label>
+                                        <input id="ucodeInput" class="form-control" placeholder="U+4E00">
+                                    </div>
+                                </div>
 
-                <div class="row my-3">
-                    <div class="form-group col-sm-12">
-                        <label>Examples</label>
-                        <textarea id="exampleInput" class="form-control" rows="3" placeholder="人們 - con người&#10;人人 - mọi người"></textarea>
+                                <div class="row my-3">
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Radicals (split ,)</label>
+                                        <input id="radicalInput" type="text" class="form-control" required
+                                            placeholder="一, 丨, 丶">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Strokes</label>
+                                        <input id="strokesInput" type="number" class="form-control" min="1" required
+                                            placeholder="1">
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Readings (SinoVietnamese)</label>
+                                        <input id="sinoVietnameseInput" class="form-control" placeholder="Nhân, nhơn">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Readings (On'yomi)</label>
+                                        <input id="onyomiReadingInput" class="form-control" placeholder="ジン, ニン">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                        <label>Readings (Hanja)</label>
+                                        <input id="hanjaReadingInput" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="row my-3">
+                                    <div class="form-group col-sm-12">
+                                        <label>Examples</label>
+                                        <textarea id="exampleInput" class="form-control" rows="3"
+                                            placeholder="人們 - con người&#10;人人 - mọi người"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="btnSave" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
-
-                <button id="btnSave" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
+    <script src="bootstrap.bundle.min.js"></script>
     <script src="renderer.js"></script>
 </body>
 
